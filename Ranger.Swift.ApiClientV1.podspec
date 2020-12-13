@@ -21,7 +21,7 @@ Used to communicate requests to the Ranger v1 API.
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
   s.author           = { 'Ranger Labs' => 'Ranger Labs' }
   s.source           = { :git => 'https://github.com/rangerlabs/Ranger.Swift.ApiClientV1.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://linkedin.com/rangerlabs'
+  s.social_media_url = 'https://www.linkedin.com/company/ranger-labs'
 
   s.ios.deployment_target = '10.0'
 
