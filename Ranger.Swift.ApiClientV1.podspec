@@ -9,34 +9,23 @@
 Pod::Spec.new do |s|
   s.name             = 'Ranger.Swift.ApiClientV1'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Ranger.Swift.ApiClientV1.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'The Swift API client for Ranger.'
+  s.swift_version = '5.0'
+  
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Used to communicate requests to the Ranger v1 API.
                        DESC
 
-  s.homepage         = 'https://github.com/nick.cromwell@rangerlabs.io/Ranger.Swift.ApiClientV1'
+  s.homepage         = 'https://github.com/rangerlabs/Ranger.Swift.ApiClientV1'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'nick.cromwell@rangerlabs.io' => 'nick.cromwell@rangerlabs.io' }
-  s.source           = { :git => 'https://github.com/nick.cromwell@rangerlabs.io/Ranger.Swift.ApiClientV1.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
+  s.author           = { 'Ranger Labs' => 'Ranger Labs' }
+  s.source           = { :git => 'https://github.com/rangerlabs/Ranger.Swift.ApiClientV1.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://linkedin.com/rangerlabs'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'Ranger.Swift.ApiClientV1/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Ranger.Swift.ApiClientV1' => ['Ranger.Swift.ApiClientV1/Assets/*.png']
-  # }
+  s.dependency 'Alamofire', '~> 5.2'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
