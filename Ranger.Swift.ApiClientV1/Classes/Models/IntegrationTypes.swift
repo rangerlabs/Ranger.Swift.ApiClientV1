@@ -6,7 +6,7 @@
 
 import Foundation
 
-enum IntegrationTypes: String, Codable {
+public enum IntegrationTypes: String, Codable {
     case webhook = "Webhook"
     case pusher = "Pusher"
 }

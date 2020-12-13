@@ -6,12 +6,29 @@
 
 import Foundation
 
-struct Breadcrumb: Codable {
-    var deviceId: String
-    var position: LatLng
-    var recordedAt: Date
-    var acceptedAt: Date? = nil
-    var externalUserId: String? = ""
-    var accuracy: Int? = 0
-    var metadata: [KeyValuePair]? = []
+public struct Breadcrumb: Codable {
+    public init(deviceId: String, position: LatLng, recordedAt: Date, acceptedAt: Date? = nil, externalUserId: String? = "", accuracy: Int? = 0, metadata: [KeyValuePair]? = []) throws {
+        if (deviceId.isEmpty) {
+            throw BreadcrumbErrors.deviceIdRequired
+        }
+        self.deviceId = deviceId
+        self.position = position
+        self.recordedAt = recordedAt
+        self.acceptedAt = acceptedAt
+        self.externalUserId = externalUserId
+        self.accuracy = accuracy
+        self.metadata = metadata
+    }
+    
+    let deviceId: String
+    let position: LatLng
+    let recordedAt: Date
+    var acceptedAt: Date?
+    var externalUserId: String?
+    var accuracy: Int?
+    var metadata: [KeyValuePair]?
+}
+
+public enum BreadcrumbErrors: Error {
+    case deviceIdRequired
 }

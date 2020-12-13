@@ -4,7 +4,7 @@
 //  Created by Nicholas Cromwell  on 12/12/20.
 //
 
-enum OrderByOptions: String, Codable {
+public enum OrderByOptions: String, Codable {
     case externalId = "ExternalId"
     case createdDate = "CreatedDate"
     case updatedDate = "UpdatedDate"

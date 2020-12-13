@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		017682D825868DE4004779C2 /* LatLngTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017682D725868DE4004779C2 /* LatLngTests.swift */; };
+		017682DA25868F07004779C2 /* BreadcrumbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017682D925868F07004779C2 /* BreadcrumbTests.swift */; };
+		017682DC25868FBC004779C2 /* BulkDeleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017682DB25868FBC004779C2 /* BulkDeleteTests.swift */; };
+		017682DE258690F5004779C2 /* KeyValuePairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017682DD258690F5004779C2 /* KeyValuePairTests.swift */; };
+		017682E025869499004779C2 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017682DF25869499004779C2 /* ScheduleTests.swift */; };
+		017682E2258697C4004779C2 /* GeofenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017682E1258697C4004779C2 /* GeofenceTests.swift */; };
 		23B50C0C8D271D5E96ECF037 /* Pods_Ranger_Swift_ApiClientV1_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565B28CF09E7BF5DE5687EAF /* Pods_Ranger_Swift_ApiClientV1_Tests.framework */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* RangerApiClientV1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* RangerApiClientV1Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		017682D725868DE4004779C2 /* LatLngTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatLngTests.swift; sourceTree = "<group>"; };
+		017682D925868F07004779C2 /* BreadcrumbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadcrumbTests.swift; sourceTree = "<group>"; };
+		017682DB25868FBC004779C2 /* BulkDeleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkDeleteTests.swift; sourceTree = "<group>"; };
+		017682DD258690F5004779C2 /* KeyValuePairTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValuePairTests.swift; sourceTree = "<group>"; };
+		017682DF25869499004779C2 /* ScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
+		017682E1258697C4004779C2 /* GeofenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceTests.swift; sourceTree = "<group>"; };
 		34EE40E1C9BD46C6E79179A5 /* Pods-Ranger.Swift.ApiClientV1_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.Swift.ApiClientV1_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Ranger.Swift.ApiClientV1_Tests/Pods-Ranger.Swift.ApiClientV1_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B367EF59FC94AFEA78E3807 /* Pods-Ranger.Swift.ApiClientV1_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ranger.Swift.ApiClientV1_Tests.release.xcconfig"; path = "Target Support Files/Pods-Ranger.Swift.ApiClientV1_Tests/Pods-Ranger.Swift.ApiClientV1_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		565B28CF09E7BF5DE5687EAF /* Pods_Ranger_Swift_ApiClientV1_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ranger_Swift_ApiClientV1_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D14B704D9F67E22F1E5CEF7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Ranger.Swift.ApiClientV1_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ranger.Swift.ApiClientV1_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* RangerApiClientV1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangerApiClientV1Tests.swift; sourceTree = "<group>"; };
 		8B67A8759DA7AE240CF17140 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FA894B09B6E5ACDA81AE44BD /* Ranger.Swift.ApiClientV1.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Ranger.Swift.ApiClientV1.podspec; path = ../Ranger.Swift.ApiClientV1.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -74,7 +86,13 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* RangerApiClientV1Tests.swift */,
+				017682D725868DE4004779C2 /* LatLngTests.swift */,
+				017682D925868F07004779C2 /* BreadcrumbTests.swift */,
+				017682DB25868FBC004779C2 /* BulkDeleteTests.swift */,
+				017682DD258690F5004779C2 /* KeyValuePairTests.swift */,
+				017682DF25869499004779C2 /* ScheduleTests.swift */,
+				017682E1258697C4004779C2 /* GeofenceTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -220,7 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				017682DC25868FBC004779C2 /* BulkDeleteTests.swift in Sources */,
+				017682E2258697C4004779C2 /* GeofenceTests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* RangerApiClientV1Tests.swift in Sources */,
+				017682E025869499004779C2 /* ScheduleTests.swift in Sources */,
+				017682DA25868F07004779C2 /* BreadcrumbTests.swift in Sources */,
+				017682D825868DE4004779C2 /* LatLngTests.swift in Sources */,
+				017682DE258690F5004779C2 /* KeyValuePairTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,8 +374,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				"TEST_HOST[sdk=iphonesimulator13.7]" = "";
+				SWIFT_VERSION = 5.0;
+				"TEST_HOST[sdk=iphonesimulator13.6]" = "";
 			};
 			name = Debug;
 		};
@@ -369,8 +393,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				"TEST_HOST[sdk=iphonesimulator13.7]" = "";
+				SWIFT_VERSION = 5.0;
+				"TEST_HOST[sdk=iphonesimulator13.6]" = "";
 			};
 			name = Release;
 		};

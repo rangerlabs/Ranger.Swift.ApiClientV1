@@ -6,7 +6,15 @@
 
 import Foundation
 
-struct Integration: Codable {
+public struct Integration: Codable {
+    public init(id: UUID, type: IntegrationTypes, name: String, description: String, projectId: UUID) {
+        self.id = id
+        self.type = type
+        self.name = name
+        self.description = description
+        self.projectId = projectId
+    }
+    
     var id: UUID
     var type: IntegrationTypes
     var name: String

@@ -4,7 +4,7 @@
 //  Created by Nicholas Cromwell  on 12/12/20.
 //
 
-struct RangerApiResponse<T:Codable>: Codable {
+public struct RangerApiResponse<T:Codable>: Codable {
     var statusCode: Int
     var message: String?
     @DecodableDefault.False var isError: Bool
@@ -12,12 +12,12 @@ struct RangerApiResponse<T:Codable>: Codable {
     var result: T?
 }
 
-struct RangerApiError: Codable {
+public struct RangerApiError: Codable {
     var message: String?
     var validationErrors: [ValidationError]?
 }
 
-struct ValidationError: Codable {
+public struct ValidationError: Codable {
     var name: String?
     var reason: String?
 }

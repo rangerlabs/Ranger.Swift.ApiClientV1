@@ -6,7 +6,7 @@
 
 import Foundation
 
-enum GeofenceShapes: String, Codable {
+public enum GeofenceShapes: String, Codable {
     case Circle = "Circle"
     case Polygon = "Polygon"
 }

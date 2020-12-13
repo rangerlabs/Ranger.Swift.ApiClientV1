@@ -7,7 +7,7 @@
 import Alamofire
 import Foundation
 
-final class RangerApiClientV1 {
+public final class RangerApiClientV1 {
     static var instance = RangerApiClientV1()
     private let baseAddress = "https://rangerlabs.io/api"
     private let encoder = JSONParameterEncoder()
@@ -101,8 +101,8 @@ final class RangerApiClientV1 {
     }
     
     //MARK: Breadcrumbs
-    static func PostBreadcrumb(breadcrumb: Breadcrumb, apiKey: String, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
-        if self.isProjectApiKey(apiKey: apiKey) {
+    public static func PostBreadcrumb(breadcrumb: Breadcrumb, apiKey: String, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
+        if !self.isBreadcrumbApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeLiveOrTestApiKey
         }
         instance.postRequest(apiKey: apiKey, url: "\(instance.baseAddress)/breadcrumbs",
@@ -111,8 +111,8 @@ final class RangerApiClientV1 {
     }
     
     //MARK: Geofences
-    static func GetGeofenceByExternalId(apiKey: String, externalId: String, completionHandler: @escaping ((RangerApiResponse<Geofence>) -> Void)) throws -> Void {
-        if self.isBreadcrumbApiKey(apiKey: apiKey) {
+    public static func GetGeofenceByExternalId(apiKey: String, externalId: String, completionHandler: @escaping ((RangerApiResponse<Geofence>) -> Void)) throws -> Void {
+        if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
         if externalId.isEmpty {
@@ -123,8 +123,8 @@ final class RangerApiClientV1 {
     }
     
     //MARK: Geofences
-    static func GetPaginatedGeofences(apiKey: String, search: String = "", sortOrder: SortOrders = .desc, orderBy: OrderByOptions = .createdDate, pageCount: Int = 100, page: Int = 0, completionHandler: @escaping ((RangerApiResponse<[Geofence]>) -> Void)) throws -> Void {
-        if self.isBreadcrumbApiKey(apiKey: apiKey) {
+    public static func GetPaginatedGeofences(apiKey: String, search: String = "", sortOrder: SortOrders = .desc, orderBy: OrderByOptions = .createdDate, pageCount: Int = 100, page: Int = 0, completionHandler: @escaping ((RangerApiResponse<[Geofence]>) -> Void)) throws -> Void {
+        if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
         if (pageCount < 1 || pageCount > 1000) {
@@ -137,16 +137,16 @@ final class RangerApiClientV1 {
         instance.getRequest(apiKey: apiKey, url: "\(instance.baseAddress)/geofences?search=\(search)&sortOrder=\(sortOrder)&orderBy=\(orderBy)&pageCount=\(pageCount)&page=\(page)", completionHandler: completionHandler)
     }
     
-    static func CreateGeofence(apiKey: String, geofence: Geofence, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
-        if self.isBreadcrumbApiKey(apiKey: apiKey) {
+    public static func CreateGeofence(apiKey: String, geofence: Geofence, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
+        if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
 
         instance.postRequest(apiKey: apiKey, url: "\(instance.baseAddress)/geofences", body: geofence, completionHandler: completionHandler)
     }
     
-    static func UpdateGeofence(apiKey: String, geofence: Geofence, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
-        if self.isBreadcrumbApiKey(apiKey: apiKey) {
+    public static func UpdateGeofence(apiKey: String, geofence: Geofence, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
+        if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
         
@@ -157,8 +157,8 @@ final class RangerApiClientV1 {
         instance.putRequest(apiKey: apiKey, url:"\(instance.baseAddress)/geofences/\(geofence.id!)" , body: geofence, completionHandler: completionHandler)
    }
     
-    static func DeleteGeofence(apiKey: String, externalId: String, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
-        if self.isBreadcrumbApiKey(apiKey: apiKey) {
+    public static func DeleteGeofence(apiKey: String, externalId: String, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
+        if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
         if externalId.isEmpty {
@@ -168,21 +168,21 @@ final class RangerApiClientV1 {
         instance.deleteRequest(apiKey: apiKey, url: "\(instance.baseAddress)/geofences/\(externalId)", completionHandler: completionHandler)
     }
     
-    static func BulkDeleteGeofences(apiKey: String, externalIds: [String], completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
-        if self.isBreadcrumbApiKey(apiKey: apiKey) {
+    public static func BulkDeleteGeofences(apiKey: String, externalIds: [String], completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
+        if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
         if externalIds.isEmpty {
-            throw ApiInputError.externalIdRequired
+            throw ApiInputError.externalIdCollectionRequired
         }
-        let requestBody = BulkDelete(externalIds: externalIds)
+        let requestBody = try BulkDelete(externalIds: externalIds)
         
         instance.postRequest(apiKey: apiKey, url:"\(instance.baseAddress)/geofences/bulk-delete", body: requestBody, completionHandler: completionHandler)
     }
     
     //MARK: Integrations
-    static func GetIntegrations(apiKey: String, completionHandler: @escaping ((RangerApiResponse<[Integration]>) -> Void)) throws -> Void {
-        if self.isBreadcrumbApiKey(apiKey: apiKey) {
+    public static func GetIntegrations(apiKey: String, completionHandler: @escaping ((RangerApiResponse<[Integration]>) -> Void)) throws -> Void {
+        if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
         instance.getRequest(apiKey: apiKey, url:"\(instance.baseAddress)/integrations", completionHandler: completionHandler)

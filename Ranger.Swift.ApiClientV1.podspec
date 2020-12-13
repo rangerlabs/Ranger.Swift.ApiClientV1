@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'Ranger.Swift.ApiClientV1'
   s.version          = '0.1.0'
   s.summary          = 'The Swift API client for Ranger.'
-  s.swift_version = '5.0'
+  s.swift_version    = '5.0'
   
   s.description      = <<-DESC
 Used to communicate requests to the Ranger v1 API.

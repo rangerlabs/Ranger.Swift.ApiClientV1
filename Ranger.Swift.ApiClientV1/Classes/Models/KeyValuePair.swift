@@ -6,7 +6,22 @@
 
 import Foundation
 
-struct KeyValuePair: Codable {
+public struct KeyValuePair: Codable {
+    public init(key: String, value: String) throws {
+        if (key.isEmpty) {
+            throw KeyValuePairErrors.keyRequired
+        }
+        if (value.isEmpty) {
+            throw KeyValuePairErrors.valueRequired
+        }
+        self.key = key
+        self.value = value
+    }
     var key: String
     var value: String
+}
+
+public enum KeyValuePairErrors: Error {
+    case keyRequired
+    case valueRequired
 }

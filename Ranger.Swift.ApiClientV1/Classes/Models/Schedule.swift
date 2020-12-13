@@ -6,8 +6,15 @@
 
 import Foundation
 
-struct DailySchedule: Codable {
-    internal init(startTime: String, endTime: String) {
+public class DailySchedule: Codable {
+    public init(startTime: String, endTime: String) throws {
+        if (startTime.isEmpty) {
+            throw DailyScheduleErrors.startTimeRequired
+        }
+        if (endTime.isEmpty) {
+            throw DailyScheduleErrors.endTimeRequired
+        }
+
         self.startTime = startTime
         self.endTime = endTime
     }
@@ -16,8 +23,8 @@ struct DailySchedule: Codable {
     var endTime: String
 }
 
-struct Schedule: Codable {
-    internal init(timeZoneId: String, sunday: DailySchedule, monday: DailySchedule, tuesday: DailySchedule, wednesday: DailySchedule, thursday: DailySchedule, friday: DailySchedule, saturday: DailySchedule) {
+public struct Schedule: Codable {
+    public init(timeZoneId: String, sunday: DailySchedule, monday: DailySchedule, tuesday: DailySchedule, wednesday: DailySchedule, thursday: DailySchedule, friday: DailySchedule, saturday: DailySchedule) {
         self.timeZoneId = timeZoneId
         self.sunday = sunday
         self.monday = monday
@@ -36,4 +43,11 @@ struct Schedule: Codable {
     let thursday: DailySchedule
     let friday: DailySchedule
     let saturday: DailySchedule
+}
+
+public enum DailyScheduleErrors: Error {
+    case incorrectFormat(String)
+    case startTimeMustBeLessThanEndTime
+    case startTimeRequired
+    case endTimeRequired
 }
