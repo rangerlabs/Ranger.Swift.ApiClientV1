@@ -17,8 +17,8 @@ public struct KeyValuePair: Codable {
         self.key = key
         self.value = value
     }
-    var key: String
-    var value: String
+    public var key: String
+    public var value: String
 }
 
 public enum KeyValuePairErrors: Error {

@@ -20,13 +20,13 @@ public struct Breadcrumb: Codable {
         self.metadata = metadata
     }
     
-    let deviceId: String
-    let position: LatLng
-    let recordedAt: Date
-    var acceptedAt: Date?
-    var externalUserId: String?
-    var accuracy: Int?
-    var metadata: [KeyValuePair]?
+    public let deviceId: String
+    public let position: LatLng
+    public let recordedAt: Date
+    public private(set) var acceptedAt: Date?
+    public private(set) var externalUserId: String?
+    public private(set) var accuracy: Int?
+    public private(set) var metadata: [KeyValuePair]?
 }
 
 public enum BreadcrumbErrors: Error {

@@ -14,7 +14,7 @@ public struct BulkDelete: Codable {
         self.externalIds = externalIds
     }
     
-    let externalIds: [String]
+    public let externalIds: [String]
 }
 
 public enum BulkDeleteErrors: Error {

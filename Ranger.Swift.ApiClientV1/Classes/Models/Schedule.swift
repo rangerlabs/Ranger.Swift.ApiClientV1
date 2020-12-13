@@ -35,14 +35,14 @@ public struct Schedule: Codable {
         self.saturday = saturday
     }
     
-    let timeZoneId: String
-    let sunday: DailySchedule
-    let monday: DailySchedule
-    let tuesday: DailySchedule
-    let wednesday: DailySchedule
-    let thursday: DailySchedule
-    let friday: DailySchedule
-    let saturday: DailySchedule
+    public let timeZoneId: String
+    public let sunday: DailySchedule
+    public let monday: DailySchedule
+    public let tuesday: DailySchedule
+    public let wednesday: DailySchedule
+    public let thursday: DailySchedule
+    public let friday: DailySchedule
+    public let saturday: DailySchedule
 }
 
 public enum DailyScheduleErrors: Error {

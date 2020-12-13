@@ -15,9 +15,9 @@ public struct Integration: Codable {
         self.projectId = projectId
     }
     
-    var id: UUID
-    var type: IntegrationTypes
-    var name: String
-    var description: String
-    var projectId: UUID
+    public private(set) var id: UUID
+    public private(set) var type: IntegrationTypes
+    public private(set) var name: String
+    public private(set) var description: String
+    public private(set) var projectId: UUID
 }

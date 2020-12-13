@@ -16,8 +16,8 @@ public struct LatLng: Codable {
         self.lng = lng
     }
     
-    let lat: Double
-    let lng: Double
+    public let lat: Double
+    public let lng: Double
 }
 
 public enum LatLngErrors : Error {

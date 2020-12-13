@@ -41,22 +41,22 @@ public struct Geofence: Codable {
         self.updatedDate = updatedDate
     }
     
-    var id: UUID?
-    var externalId: String
-    var shape: GeofenceShapes
-    var coordinates: [LatLng]
-    var radius: Int?
-    var projectId: UUID?
-    var description: String?
-    var integrationIds: [UUID]
-    var metadata: [KeyValuePair]
-    var onEnter: Bool
-    var onDwell: Bool
-    var onExit: Bool
-    var enabled: Bool
-    var schedule: Schedule?
-    var createdDate: Date?
-    var updatedDate: Date?
+    public private(set) var id: UUID?
+    public private(set) var externalId: String
+    public private(set) var shape: GeofenceShapes
+    public private(set) var coordinates: [LatLng]
+    public private(set) var radius: Int?
+    public private(set) var projectId: UUID?
+    public private(set) var description: String?
+    public private(set) var integrationIds: [UUID]
+    public private(set) var metadata: [KeyValuePair]
+    public private(set) var onEnter: Bool
+    public private(set) var onDwell: Bool
+    public private(set) var onExit: Bool
+    public private(set) var enabled: Bool
+    public private(set) var schedule: Schedule?
+    public private(set) var createdDate: Date?
+    public private(set) var updatedDate: Date?
 }
 
 public enum GeofenceErrors: Error {
