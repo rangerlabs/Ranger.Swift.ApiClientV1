@@ -1,6 +1,6 @@
 //
 //  GeofenceTests.swift
-//  Ranger.Swift.ApiClientV1_Tests
+//  RangerApiClientV1_Tests
 //
 //  Created by Nicholas Cromwell  on 12/13/20.
 //  Copyright © 2020 CocoaPods. All rights reserved.

@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint Ranger.Swift.ApiClientV1.podspec' to ensure this is a
+# Be sure to run `pod lib lint RangerApiClientV1.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Ranger.Swift.ApiClientV1'
-  s.version          = '0.4.0'
+  s.name             = 'RangerApiClientV1'
+  s.version          = '0.5.0'
   s.summary          = 'The Swift API client for Ranger.'
   s.swift_version    = '5.0'
   
@@ -24,7 +24,7 @@ Used to communicate requests to the Ranger v1 API.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'Ranger.Swift.ApiClientV1/Classes/**/*'
+  s.source_files = 'RangerApiClientV1/Classes/**/*'
   s.dependency 'Alamofire', '~> 5.2'
 
 end

@@ -1,6 +1,6 @@
 use_frameworks!
-target 'Ranger.Swift.ApiClientV1_Tests' do
-  pod 'Ranger.Swift.ApiClientV1', :path => '../'
+target 'RangerApiClientV1_Tests' do
+  pod 'RangerApiClientV1', :path => '../'
   pod 'Alamofire', '~> 5.2'
   
   pod 'Quick', '~> 2.2.0'
