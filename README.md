@@ -1,4 +1,4 @@
-# RangerApiClientV1
+# Ranger.Swift.ApiClientV1
 
 [![CI Status](https://img.shields.io/travis/rangerlabs/Ranger.Swift.ApiClientV1.svg?style=flat)](https://travis-ci.org/rangerlabs/Ranger.Swift.ApiClientV1)
 [![Version](https://img.shields.io/cocoapods/v/Ranger.Swift.ApiClientV1.svg?style=flat)](https://cocoapods.org/pods/Ranger.Swift.ApiClientV1)
@@ -13,11 +13,11 @@ The Swift API client for Ranger.
 
 ## Installation
 
-RangerApiClientV1 is available through [CocoaPods](https://cocoapods.org). To install
+Ranger.Swift.ApiClientV1 is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RangerApiClientV1'
+pod 'Ranger.Swift.ApiClientV1'
 ```
 
 ## Author
@@ -26,4 +26,4 @@ Ranger Labs, LLC
 
 ## License
 
-RangerApiClientV1 is available under the Apache 2.0 license. See the LICENSE file for more info.
+Ranger.Swift.ApiClientV1 is available under the Apache 2.0 license. See the LICENSE file for more info.

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "RangerApiClientV1_Example.app"
-               BlueprintName = "RangerApiClientV1_Example"
-               ReferencedContainer = "container:RangerApiClientV1.xcodeproj">
+               BuildableName = "Ranger.Swift.ApiClientV1_Example.app"
+               BlueprintName = "Ranger.Swift.ApiClientV1_Example"
+               ReferencedContainer = "container:Ranger.Swift.ApiClientV1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "RangerApiClientV1_Tests.xctest"
-               BlueprintName = "RangerApiClientV1_Tests"
-               ReferencedContainer = "container:RangerApiClientV1.xcodeproj">
+               BuildableName = "Ranger.Swift.ApiClientV1_Tests.xctest"
+               BlueprintName = "Ranger.Swift.ApiClientV1_Tests"
+               ReferencedContainer = "container:Ranger.Swift.ApiClientV1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "RangerApiClientV1_Example.app"
-            BlueprintName = "RangerApiClientV1_Example"
-            ReferencedContainer = "container:RangerApiClientV1.xcodeproj">
+            BuildableName = "Ranger.Swift.ApiClientV1_Example.app"
+            BlueprintName = "Ranger.Swift.ApiClientV1_Example"
+            ReferencedContainer = "container:Ranger.Swift.ApiClientV1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -56,9 +56,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "RangerApiClientV1_Tests.xctest"
-               BlueprintName = "RangerApiClientV1_Tests"
-               ReferencedContainer = "container:RangerApiClientV1.xcodeproj">
+               BuildableName = "Ranger.Swift.ApiClientV1_Tests.xctest"
+               BlueprintName = "Ranger.Swift.ApiClientV1_Tests"
+               ReferencedContainer = "container:Ranger.Swift.ApiClientV1.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -78,9 +78,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "RangerApiClientV1_Example.app"
-            BlueprintName = "RangerApiClientV1_Example"
-            ReferencedContainer = "container:RangerApiClientV1.xcodeproj">
+            BuildableName = "Ranger.Swift.ApiClientV1_Example.app"
+            BlueprintName = "Ranger.Swift.ApiClientV1_Example"
+            ReferencedContainer = "container:Ranger.Swift.ApiClientV1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "RangerApiClientV1_Example.app"
-            BlueprintName = "RangerApiClientV1_Example"
-            ReferencedContainer = "container:RangerApiClientV1.xcodeproj">
+            BuildableName = "Ranger.Swift.ApiClientV1_Example.app"
+            BlueprintName = "Ranger.Swift.ApiClientV1_Example"
+            ReferencedContainer = "container:Ranger.Swift.ApiClientV1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -7,8 +7,8 @@
 import Alamofire
 import Foundation
 
-public final class RangerApiClientV1 {
-    static var instance = RangerApiClientV1()
+public final class RangerSwiftApiClientV1 {
+    static var instance = RangerSwiftApiClientV1()
     private let baseAddress = "https://rangerlabs.io/api"
     private let encoder = JSONParameterEncoder()
     private let decoder = JSONDecoder()

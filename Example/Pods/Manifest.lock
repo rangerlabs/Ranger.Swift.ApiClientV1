@@ -2,14 +2,14 @@ PODS:
   - Alamofire (5.4.0)
   - Nimble (8.0.9)
   - Quick (2.2.1)
-  - RangerApiClientV1 (0.1.0):
+  - Ranger.Swift.ApiClientV1 (0.1.0):
     - Alamofire (~> 5.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Nimble (~> 8.0.7)
   - Quick (~> 2.2.0)
-  - RangerApiClientV1 (from `../`)
+  - Ranger.Swift.ApiClientV1 (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -18,14 +18,14 @@ SPEC REPOS:
     - Quick
 
 EXTERNAL SOURCES:
-  RangerApiClientV1:
+  Ranger.Swift.ApiClientV1:
     :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
   Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
-  RangerApiClientV1: a6a1f1b7852d4496d90c4923201967d90d35f179
+  Ranger.Swift.ApiClientV1: a6a1f1b7852d4496d90c4923201967d90d35f179
 
 PODFILE CHECKSUM: 33b0bbbbcc360fe6ca4e0a79173c309ef4285219
 

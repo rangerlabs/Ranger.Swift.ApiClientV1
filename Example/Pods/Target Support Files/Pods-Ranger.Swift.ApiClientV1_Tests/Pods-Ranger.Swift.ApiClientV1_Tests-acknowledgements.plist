@@ -670,7 +670,7 @@ limitations under the License.
             <key>License</key>
             <string>MIT</string>
             <key>Title</key>
-            <string>RangerApiClientV1</string>
+            <string>Ranger.Swift.ApiClientV1</string>
             <key>Type</key>
             <string>PSGroupSpecifier</string>
          </dict>
