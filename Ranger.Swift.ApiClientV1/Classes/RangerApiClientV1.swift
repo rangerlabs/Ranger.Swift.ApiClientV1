@@ -9,9 +9,9 @@ import Foundation
 
 public final class RangerSwiftApiClientV1 {
     static var instance = RangerSwiftApiClientV1()
-    private let baseAddress = "https://rangerlabs.io/api"
     private let encoder = JSONParameterEncoder()
     private let decoder = JSONDecoder()
+    private let baseAddress: String
     
     private func getHeaders(apiKey: String) -> HTTPHeaders {
         return [
@@ -21,7 +21,8 @@ public final class RangerSwiftApiClientV1 {
         ]
     }
     
-    private init() {
+    private init(url: String = "https://rangerlabs.io/api") {
+        baseAddress = url
         let isoFormatter = DateFormatter()
         isoFormatter.timeZone = TimeZone(secondsFromGMT: 0)!
         isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
