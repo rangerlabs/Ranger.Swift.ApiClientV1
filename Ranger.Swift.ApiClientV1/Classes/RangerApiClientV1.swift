@@ -11,7 +11,7 @@ public final class RangerSwiftApiClientV1 {
     static var instance = RangerSwiftApiClientV1()
     private let encoder = JSONParameterEncoder()
     private let decoder = JSONDecoder()
-    private let baseAddress: String
+    private var baseUrl: String = "https://rangerlabs.io/api"
     
     private func getHeaders(apiKey: String) -> HTTPHeaders {
         return [
@@ -21,8 +21,7 @@ public final class RangerSwiftApiClientV1 {
         ]
     }
     
-    private init(url: String = "https://rangerlabs.io/api") {
-        baseAddress = url
+    private init() {
         let isoFormatter = DateFormatter()
         isoFormatter.timeZone = TimeZone(secondsFromGMT: 0)!
         isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -101,12 +100,16 @@ public final class RangerSwiftApiClientV1 {
         }
     }
     
+    public func setBaseUrl(url: String) {
+        baseUrl = url
+    }
+    
     //MARK: Breadcrumbs
     public static func PostBreadcrumb(breadcrumb: Breadcrumb, apiKey: String, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
         if !self.isBreadcrumbApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeLiveOrTestApiKey
         }
-        instance.postRequest(apiKey: apiKey, url: "\(instance.baseAddress)/breadcrumbs",
+        instance.postRequest(apiKey: apiKey, url: "\(instance.baseUrl)/breadcrumbs",
             body: breadcrumb,
             completionHandler: completionHandler)
     }
@@ -120,7 +123,7 @@ public final class RangerSwiftApiClientV1 {
             throw ApiInputError.externalIdRequired
         }
         
-        instance.getRequest(apiKey: apiKey, url: "\(instance.baseAddress)/geofences?externalId=\(externalId)", completionHandler: completionHandler)
+        instance.getRequest(apiKey: apiKey, url: "\(instance.baseUrl)/geofences?externalId=\(externalId)", completionHandler: completionHandler)
     }
     
     //MARK: Geofences
@@ -135,7 +138,7 @@ public final class RangerSwiftApiClientV1 {
             throw ApiInputError.pageOutOfBounds("Must be greater than or equal to 0")
         }
         
-        instance.getRequest(apiKey: apiKey, url: "\(instance.baseAddress)/geofences?search=\(search)&sortOrder=\(sortOrder)&orderBy=\(orderBy)&pageCount=\(pageCount)&page=\(page)", completionHandler: completionHandler)
+        instance.getRequest(apiKey: apiKey, url: "\(instance.baseUrl)/geofences?search=\(search)&sortOrder=\(sortOrder)&orderBy=\(orderBy)&pageCount=\(pageCount)&page=\(page)", completionHandler: completionHandler)
     }
     
     public static func CreateGeofence(apiKey: String, geofence: Geofence, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
@@ -143,7 +146,7 @@ public final class RangerSwiftApiClientV1 {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
 
-        instance.postRequest(apiKey: apiKey, url: "\(instance.baseAddress)/geofences", body: geofence, completionHandler: completionHandler)
+        instance.postRequest(apiKey: apiKey, url: "\(instance.baseUrl)/geofences", body: geofence, completionHandler: completionHandler)
     }
     
     public static func UpdateGeofence(apiKey: String, geofence: Geofence, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
@@ -155,7 +158,7 @@ public final class RangerSwiftApiClientV1 {
             throw ApiInputError.idRequired
         }
         
-        instance.putRequest(apiKey: apiKey, url:"\(instance.baseAddress)/geofences/\(geofence.id!)" , body: geofence, completionHandler: completionHandler)
+        instance.putRequest(apiKey: apiKey, url:"\(instance.baseUrl)/geofences/\(geofence.id!)" , body: geofence, completionHandler: completionHandler)
    }
     
     public static func DeleteGeofence(apiKey: String, externalId: String, completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
@@ -166,7 +169,7 @@ public final class RangerSwiftApiClientV1 {
             throw ApiInputError.externalIdRequired
         }
         
-        instance.deleteRequest(apiKey: apiKey, url: "\(instance.baseAddress)/geofences/\(externalId)", completionHandler: completionHandler)
+        instance.deleteRequest(apiKey: apiKey, url: "\(instance.baseUrl)/geofences/\(externalId)", completionHandler: completionHandler)
     }
     
     public static func BulkDeleteGeofences(apiKey: String, externalIds: [String], completionHandler: @escaping ((RangerApiResponse<Data>) -> Void)) throws -> Void {
@@ -178,7 +181,7 @@ public final class RangerSwiftApiClientV1 {
         }
         let requestBody = try BulkDelete(externalIds: externalIds)
         
-        instance.postRequest(apiKey: apiKey, url:"\(instance.baseAddress)/geofences/bulk-delete", body: requestBody, completionHandler: completionHandler)
+        instance.postRequest(apiKey: apiKey, url:"\(instance.baseUrl)/geofences/bulk-delete", body: requestBody, completionHandler: completionHandler)
     }
     
     //MARK: Integrations
@@ -186,6 +189,6 @@ public final class RangerSwiftApiClientV1 {
         if !self.isProjectApiKey(apiKey: apiKey) {
             throw InvalidApiKeyError.mustBeProjectApiKey
         }
-        instance.getRequest(apiKey: apiKey, url:"\(instance.baseAddress)/integrations", completionHandler: completionHandler)
+        instance.getRequest(apiKey: apiKey, url:"\(instance.baseUrl)/integrations", completionHandler: completionHandler)
     }
 }
