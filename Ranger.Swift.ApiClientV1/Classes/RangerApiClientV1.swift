@@ -100,8 +100,8 @@ public final class RangerSwiftApiClientV1 {
         }
     }
     
-    public func setBaseUrl(url: String) {
-        baseUrl = url
+    public static func SetBaseUrl(url: String) {
+        instance.baseUrl = url
     }
     
     //MARK: Breadcrumbs
