@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Ranger.Swift.ApiClientV1'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'The Swift API client for Ranger.'
   s.swift_version    = '5.0'
   
